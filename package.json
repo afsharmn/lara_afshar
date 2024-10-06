@@ -1,0 +1,23 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "axios": "^1.7.4",
+        "laravel-vite-plugin": "^1.0",
+        "postcss": "^8.4.47",
+        "postcss-rtlcss": "^5.5.0",
+        "sass-embedded": "^1.79.4",
+        "vite": "^5.0"
+    },
+    "dependencies": {
+        "bootstrap": "^5.3.3",
+        "bootstrap-icons": "^1.11.3",
+        "dotenv": "^16.4.5",
+        "jquery": "^3.7.1",
+        "toastify-js": "^1.12.0"
+    }
+}
