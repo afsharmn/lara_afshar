@@ -1,6 +1,5 @@
 import './bootstrap';
 
-
 $('#menu-button').on('click', function() {
     $('.wrapper').toggleClass('menu-closed');
 })
