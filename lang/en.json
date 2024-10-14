@@ -237,5 +237,17 @@
     "Invalid login credentials.": "Invalid login credentials.",
     "email": "email",
     "logout": "logout",
-    "public media": "public media"
+    "public media": "public media",
+    "sound": "sound",
+    "image": "image",
+    "video": "video",
+    "text": "text",
+    "font": "font",
+    "pdf": "pdf",
+    "excel": "excel",
+    "word": "word",
+    "powerpoint": "powerpoint",
+    "archive": "archive",
+    "other": "other",
+    "please wait until upload done": "please wait until upload done"
 }

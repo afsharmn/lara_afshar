@@ -237,5 +237,17 @@
     "Invalid login credentials.": "کاربری با این مشخصات یافت نشد.",
     "email": "ایمیل",
     "logout": "خروج",
-    "public media": "رسانه عمومی"
+    "public media": "رسانه عمومی",
+    "audio": "صدا",
+    "image": "تصویر",
+    "video": "ویدئو",
+    "text": "تکست",
+    "font": "فونت",
+    "pdf": "پی دی اف",
+    "excel": "اکسل",
+    "word": "ورد",
+    "powerpoint": "پاورپوینت",
+    "archive": "آرشیو",
+    "other": "دیگر",
+    "please wait until upload done": "لطفا منتظر اتمام آپلود باشید."
 }

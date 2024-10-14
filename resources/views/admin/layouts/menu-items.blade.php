@@ -1,7 +1,8 @@
 @php($route = 'admin.index')
 <x-admin.menu-item href="{{ route($route) }}" icon="bi-house-door-fill" title="خانه" :active="\Illuminate\Support\Facades\Route::is($route)" />
 
-<x-admin.menu-item href="#" icon="bi-collection" :title="__('public media')" />
+@php($route = 'admin.media.index')
+<x-admin.menu-item href="{{ route($route) }}" icon="bi-collection" :title="__('public media')" :active="\Illuminate\Support\Facades\Route::is($route)" />
 
 {{--<x-admin.menu-item href="#" icon="bi-info-lg" title="اطلاعات" />--}}
 

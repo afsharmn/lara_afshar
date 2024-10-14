@@ -1,0 +1,27 @@
+@import 'filepond/dist/filepond.min.css';
+
+.filepond--file-status{
+    align-items: end!important;
+    span{
+        direction: rtl!important;
+    }
+}
+
+.filepond--file-poster{
+    img{
+        width: 100% !important;
+        object-fit: cover;
+    }
+}
+
+.filepond--root {
+    .filepond--panel-root {
+        background-color: white;
+    }
+}
+.filepond--drop-label{
+    *{
+        white-space: normal!important;
+
+    }
+}

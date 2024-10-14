@@ -9,7 +9,10 @@
     <title>{{ config('app.name') }}</title>
     <link rel="icon" href="{{ asset('favicon.ico') }}">
 
+    <livewire:styles/>
+    @stack('third_party_stylesheets')
     @vite('resources/scss/admin/admin.scss')
+    @stack('page_css')
 
 </head>
 <body>

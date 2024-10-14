@@ -4,6 +4,8 @@
 
 @import "../fonts includes/vazir";
 
+@import 'filepond-custom';
+
 @import "auth";
 
 @mixin custom-scrollbar {
@@ -171,6 +173,54 @@ $header-height: 60px;
 
         .main {
             width: 100%;
+        }
+
+    }
+
+}
+
+
+.media-list-col{
+    .card{
+        cursor: pointer;
+    }
+
+    &.selected{
+        .card{
+            background-color: $primary;
+            box-shadow: 1px 1px 5px 2px silver;
+        }
+        .media-list-name{
+            color: white;
+        }
+    }
+    .media-list-img , .media-list-video {
+        width: 100%;
+        max-height: 200px;
+    }
+
+    .media-list-img{
+        object-fit: contain;
+        border-radius: 4px;
+    }
+    .media-list-video{
+        border-radius: 4px;
+    }
+    .media-list-audio{
+        max-width: 100%;
+        display: block;
+        max-height: 200px;
+    }
+    .media-list-name{
+        text-align: center;
+        padding: 8px 12px;
+        white-space: normal;
+    }
+    i{
+        font-size: 50px;
+
+        @media (min-width: map-get($grid-breakpoints, md)) {
+            font-size: 80px;
         }
 
     }
