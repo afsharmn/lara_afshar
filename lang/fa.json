@@ -249,5 +249,9 @@
     "powerpoint": "پاورپوینت",
     "archive": "آرشیو",
     "other": "دیگر",
-    "please wait until upload done": "لطفا منتظر اتمام آپلود باشید."
+    "please wait until upload done": "لطفا منتظر اتمام آپلود باشید.",
+    "name": "نام",
+    "size": "حجم",
+    "extension": "پسوند",
+    "type": "نوع"
 }

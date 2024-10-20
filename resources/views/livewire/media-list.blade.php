@@ -1,26 +1,24 @@
 <div>
 
+
     <div class="row">
 
         @foreach ($files as $item)
 
-            @if($item->type == \App\Models\Media::TYPE_AUDIO)
-
-
-
-            @endif
-
-            <div class="col-6 col-md-4 col-lg-3 mb-3 media-list-col">
+            <div class="col-6 col-md-4 mb-3 media-list-col">
 
                 <div class="card">
 
-                    <div class="card-body p-1 d-flex flex-column align-items-center justify-content-center">
+                    <div class="card-body p-1 d-flex flex-column justify-content-center">
 
-                        <div>
+
+                        <div class="mb-2">
                             @switch((int)$item->type)
                                 @case(\App\Models\Media::TYPE_AUDIO)
 
-                                    <audio class="media-list-audio" controls><source src="{{ $item->url }}"></audio>
+                                    <audio class="media-list-audio" controls>
+                                        <source src="{{ $item->url }}">
+                                    </audio>
                                     @break
 
                                 @case(\App\Models\Media::TYPE_IMAGE)
@@ -29,7 +27,9 @@
 
 
                                 @case(\App\Models\Media::TYPE_VIDEO)
-                                    <video class="media-list-video" controls><source src="{{ $item->url }}"></video>
+                                    <video class="media-list-video" controls>
+                                        <source src="{{ $item->url }}">
+                                    </video>
                                     @break
 
 
@@ -73,7 +73,41 @@
                             @endswitch
                         </div>
 
-                        <div class="media-list-name">نام فایل</div>
+                        <div class="d-flex flex-column media-list-info">
+                            <div class="d-flex">
+                                <span class="me-1">@lang('size') :</span>
+                                <span>{{ \App\Helpers\File::humanFilesize($item->size) }}</span>
+                            </div>
+                            <div class="d-flex">
+                                <span class="me-1">@lang('extension') :</span>
+                                <span>{{ $item->extension }}</span>
+                            </div>
+                            <div class="d-flex">
+                                <span class="me-1">@lang('type') :</span>
+                                <span>{{ \App\Models\Media::typesValue()[$item->type] }}</span>
+                            </div>
+
+                            @if($this->editNameIndex == $item->id)
+                                <div class="input-group mt-2">
+                                    <input onfocusout="this.value=null"
+                                           wire:change="updateName()"
+                                           wire:model="fileName" name="fileName" id="fileName" type="text" class="form-control">
+                                    <button wire:click="updateName()" class="btn btn-primary" type="button">
+                                        <i class="bi bi-check"></i>
+                                    </button>
+                                </div>
+                                @error('fileName') <span class="text-danger">{{ $message }}</span> @enderror
+                            @else
+                                <div class="d-flex name mt-2">
+                                    <span class="me-1">@lang('name') :</span>
+                                    @if(!empty($item->name))
+                                        <span class="me-1 name" wire:click="setEditNameIndex({{$item->id}})">{{$item->name}}</span>
+                                    @endif
+                                    <i class="bi bi-pencil-square" wire:click="setEditNameIndex({{$item->id}})"></i>
+                                </div>
+                            @endif
+
+                        </div>
 
                     </div>
 
@@ -86,4 +120,5 @@
     </div>
 
     {{ $files->links() }}
+
 </div>

@@ -183,6 +183,7 @@ $header-height: 60px;
 .media-list-col{
     .card{
         cursor: pointer;
+        background-color: #fdffee;
     }
 
     &.selected{
@@ -211,17 +212,26 @@ $header-height: 60px;
         display: block;
         max-height: 200px;
     }
-    .media-list-name{
-        text-align: center;
-        padding: 8px 12px;
-        white-space: normal;
+
+    .media-list-info{
+        font-size: 11px;
+
+        .name{
+            font-weight: bold;
+            font-size: 12px;
+            white-space: pre-wrap;
+            line-break: anywhere;
+        }
+        .bi-pencil-square{
+            font-size: 15px!important;
+            color: blue;
+        }
+        .bi-check{
+            font-size: 12px;
+        }
     }
     i{
-        font-size: 50px;
-
-        @media (min-width: map-get($grid-breakpoints, md)) {
-            font-size: 80px;
-        }
+        font-size: 40px;
 
     }
 

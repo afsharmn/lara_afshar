@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('media', function (Blueprint $table) {
             $table->id();
+            $table->text('name')->nullable();
             $table->text('address');
             $table->bigInteger('size');
             $table->string('extension');

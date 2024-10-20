@@ -25,3 +25,18 @@
 
     }
 }
+.filepond--image-canvas-wrapper{
+    transform: none !important;
+
+    height: 100%;
+    width: 100%;
+    .filepond--image-bitmap{
+        height: 100%;
+        width: 100%;
+        canvas{
+            height: 100%;
+            width: 100%;
+        }
+
+    }
+}

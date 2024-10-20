@@ -249,5 +249,10 @@
     "powerpoint": "powerpoint",
     "archive": "archive",
     "other": "other",
-    "please wait until upload done": "please wait until upload done"
+    "please wait until upload done": "please wait until upload done",
+    "name": "name",
+    "size": "size",
+    "extension": "extension",
+    "type": "type"
+
 }

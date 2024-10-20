@@ -19,6 +19,7 @@ class Media extends Model
     const TYPE_ARCHIVE = 10;
     const TYPE_OTHER = 11;
     protected $fillable = [
+        'name',
         'address',
         'size',
         'extension',
