@@ -7,9 +7,9 @@
 
             <div class="col-6 col-md-4 mb-3 media-list-col">
 
-                <div class="card">
+                <div class="card h-100">
 
-                    <div class="card-body p-1 d-flex flex-column justify-content-center">
+                    <div class="card-body p-1 d-flex flex-column justify-content-between">
 
 
                         <div class="mb-2">
