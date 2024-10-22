@@ -29,13 +29,13 @@ class MediaController extends Controller
                 ->keys()
                 ->first();
 
-            $name = md5(microtime());
+            $clientOriginalExtension = $request->file($inputName)->getClientOriginalExtension();
 
-            $extension = $request->file($inputName)->extension();
+            $path = $request->file($inputName)->storeAs(date("Y"), md5(microtime()) . '.' . $clientOriginalExtension, ['disk' => 'public']);
 
-            $address = $request->file($inputName)->storeAs(date("Y"), $name . '.' . $extension, ['disk' => 'public']);
+            $realPath = storage_path('app/public/' . $path);
 
-            $realPath = storage_path('app/public/' . $address);
+            $name = pathinfo($request->file($inputName)->getClientOriginalName(), PATHINFO_FILENAME);
 
             $size = File::size($realPath);
 
@@ -46,7 +46,8 @@ class MediaController extends Controller
             $type = \App\Helpers\File::getFileTypeForMedia($mimeType);
 
             Media::create([
-                'address' => $address,
+                'name' => $name,
+                'address' => $path,
                 'size' => $size,
                 'extension' => $extension,
                 'type' => $type,
